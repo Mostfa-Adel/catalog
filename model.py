@@ -16,7 +16,7 @@ class Model:
     def make_session():
         """make all operations to connect to catalog.db database
         and return session object to make CRUD operations with it"""
-        engine = create_engine("sqlite:///catalog.db")
+       	engine = create_engine('postgresql://catalog:password@localhost/catalog')
         Base.metadata.bind = engine
         s = sessionmaker(bind=engine)
         return s()
